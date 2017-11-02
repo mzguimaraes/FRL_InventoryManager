@@ -54,23 +54,31 @@ An Example Item:
 
 ## [Link to Commented First Draft Schema](db.js) 
 
-(___TODO__: create a first draft of your Schemas in db.js and link to it_)
-
 ## Wireframes
 
-(___TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc._)
+/home - homepage and equipment overview
 
-/list/create - page for creating a new shopping list
+![home](documentation/home.png)
 
-![list create](documentation/list-create.png)
+/calendar - availability calendar for an item
 
-/list - page for showing all shopping lists
+![calendar](documentation/calendar.png)
 
-![list](documentation/list.png)
+/reserve - form to create a new reservation request
 
-/list/slug - page for showing specific shopping list
+![reserve](documentation/reserve.png)
 
-![list](documentation/list-slug.png)
+/reserve/past - view all your past reservation requests
+
+![reserve past](documentation/reserve-past.png)
+
+/login - login/registration page
+
+![login registration](documentation/login.png)
+
+/admin - admin controls for the application
+
+![admin](documentation/admin.png)
 
 ## Site map
 
