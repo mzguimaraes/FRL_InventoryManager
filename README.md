@@ -1,17 +1,9 @@
-The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
-
-(___TODO__: your project name_)
-
-# Shoppy Shoperson 
+# EquipReality
 
 ## Overview
+A CS research lab can move fast.  Technology never stops advancing, so your team can't stop either.  Sometimes, equipment can get left behind in your wake.  Administrating such a team requires focus and organization.  EquipReality is here to help your team organize itself.
 
-(___TODO__: a brief one or two paragraph, high-level description of your project_)
-
-Remembering what to buy at the grocery store is waaaaay too difficult. Also, shopping for groceries when you're hungry leads to regrettable purchases. Sooo... that's where Shoppy Shoperson comes in!
-
-Shoppy Shoperson is a web app that will allow users to keep track of multiple grocery lists. Users can register and login. Once they're logged in, they can create or view their grocery list. For every list that they have, they can add items to the list or cross off items.
-
+EquipReality is a web app that will help members of a research lab to maintain the order of their gear.  Members can register with admin approval and log in.  Once signed in, they can view the availablity of the equipment their team owns, and put in requests to check out said gear.  The admin maintains as much control over the transactions as they want!
 
 ## Data Model
 
@@ -91,17 +83,17 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 (___TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed_)
 
 * (5 points) Integrate user authentication
-    * I'm going to be using passport for user authentication
-    * And account has been made for testing; I'll email you the password
-    * see <code>cs.nyu.edu/~jversoza/ait-final/register</code> for register page
-    * see <code>cs.nyu.edu/~jversoza/ait-final/login</code> for login page
-* (4 points) Perform client side form validation using a JavaScript library
-    * see <code>cs.nyu.edu/~jversoza/ait-final/my-form</code>
-    * if you put in a number that's greater than 5, an error message will appear in the dom
-* (5 points) vue.js
-    * used vue.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
+    * I'll use Passport.js for user authentication
+    * Since this app will be organization-exclusive, all registrations will require admin approval
+    * I'll deploy a "fake" version of the site (with a separate database from the one I'll be using for my lab) to NYU servers
+    * This fake deployment will include a test account for graders
+* (2 points) Use a CSS framework
+    * I plan to use Bootstrap.
+* (2 points)  For external APIs
+    * My team is on Slack, so I plan to include integrations for that service.
+    * I don't anticipate this to be too hard to implement, but I may be surprised!  Will change point value accordingly if this turns out to be the case.
 
-10 points total out of 8 required points (___TODO__: addtional points will __not__ count for extra credit_)
+8 points total out of 8 required points
 
 
 ## [Link to Initial Main Project File](app.js) 
