@@ -7,12 +7,11 @@ EquipReality is a web app that will help members of a research lab to maintain t
 
 ## Data Model
 
-(___TODO__: a description of your application's data and their relationships to each other_) 
+The application will store Users, Items, and Requests
 
-The application will store Users, Lists and Items
-
-* users can have multiple lists (via references)
-* each list can have multiple items (by embedding)
+* Users can have multiple Requests via reference
+* Requests can have multiple Items via reference
+* Each Item represents a single object (or set of related objects--e.g. a full HTC Vive setup)
 
 (___TODO__: sample documents_)
 
@@ -20,23 +19,36 @@ An Example User:
 
 ```javascript
 {
-  username: "shannonshopper",
+  username: "ronaldresearcher",
   hash: // a password hash,
-  lists: // an array of references to List documents
+  fullname: "Ronald Researcher",
+  email: "ronald@research.edu",
+  requests: [] //a list of references to this user's Requests
 }
 ```
 
-An Example List with Embedded Items:
+An Example Request:
 
 ```javascript
 {
-  user: // a reference to a User object
-  name: "Breakfast foods",
-  items: [
-    { name: "pancakes", quantity: "9876", checked: false},
-    { name: "ramen", quantity: "2", checked: true},
-  ],
-  createdAt: // timestamp
+  name: "SIGGRAPH 2018", //optional, defaults to timestamp
+  user: //reference to User who filed this Request
+  external: true, //requesting to remove items from the lab
+  started: //UNIX time of beginning of term
+  duedate: //UNIX time of end of term, or Infinity if indefinite & internal
+  items: [] //list of references to items inclueded in Request
+  approved: true //admin approval, defaults to undefined
+}
+```
+
+An Example Item:
+
+```javascript
+{
+  name: "HTC Vive Tracker",
+  label: "8", //a physical label applied to the item
+  location: "Rightmost cabinet by Bay 1", //where to pick up/return item 
+  available: false //is currently unused
 }
 ```
 
@@ -69,18 +81,23 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 ## User Stories or Use Cases
 
-(___TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://www.mongodb.com/download-center?jmp=docs&_ga=1.47552679.1838903181.1489282706#previous)_)
-
-1. as non-registered user, I can register a new account with the site
-2. as a user, I can log in to the site
-3. as a user, I can create a new grocery list
-4. as a user, I can view all of the grocery lists I've created in a single list
-5. as a user, I can add items to an existing grocery list
-6. as a user, I can cross off items in an existing grocery list
+1. As a non-registered user with an invite email from the admin, I can register for a new account
+2. As a user, I can log in to the website
+3. As a user, I can view all equipment tracked by the service
+4. As a user, I can view an availability calendar for any given item
+5. As a user, I can place an equipment reservation order to be approved by the admin
+6. As a user, I can request either an in-lab reservation for an indefinite amount of time or an out-of-lab reservation for a maximum term of two weeks
+7. As a user, I can see a list of all my past approved and denied reservation requests
+8. As a user, I can view my approved reservations and will be notified of their approval via email
+9. As a user, I will receive an email at the end of a reservation term reminding me to return my equipment
+10. As a user, I can declare in the app that I've returned my items at any point during a reservation term
+11. As an admin, I can send invite emails
+12. As an admin, I can approve reservation requests
+13. As an admin, I can see a list of all users and their reservations
+14. As an admin, I am notified via email of any past-due reservations
+15. As an admin, I can configure the application settings (e.g. enable auto request approval, change maximum term lengths, etc.)
 
 ## Research Topics
-
-(___TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed_)
 
 * (5 points) Integrate user authentication
     * I'll use Passport.js for user authentication
@@ -89,20 +106,20 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
     * This fake deployment will include a test account for graders
 * (2 points) Use a CSS framework
     * I plan to use Bootstrap.
+* (2 points) Use a server-side JavaScript module
+    * To manage admin email, I plan to use the Nodemail package
 * (2 points)  For external APIs
     * My team is on Slack, so I plan to include integrations for that service.
     * I don't anticipate this to be too hard to implement, but I may be surprised!  Will change point value accordingly if this turns out to be the case.
 
-8 points total out of 8 required points
+11 points total out of 8 required points
 
 
 ## [Link to Initial Main Project File](app.js) 
 
-(___TODO__: create a skeleton Express application with a package.json, app.js, views folder, etc. ... and link to your initial app.js_)
-
 ## Annotations / References Used
 
-(___TODO__: list any tutorials/references/etc. that you've based your code off of_)
-
 1. [passport.js authentication docs](http://passportjs.org/docs) - (add link to source code that was based on this)
-2. [tutorial on vue.js](https://vuejs.org/v2/guide/) - (add link to source code that was based on this)
+2. [Slack API documentation](https://api.slack.com/internal-integrations) - (add link to source code that was based on this)
+3. [Nodemail documentation](https://nodemailer.com/usage/)
+4. More to come as development continues!

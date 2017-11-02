@@ -10,6 +10,11 @@ var users = require('./routes/users');
 
 var app = express();
 
+//database initialization
+require("./db");
+const mongoose = require("mongoose");
+//TODO: add schemas
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
