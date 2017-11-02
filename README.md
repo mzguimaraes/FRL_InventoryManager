@@ -13,8 +13,6 @@ The application will store Users, Items, and Requests
 * Requests can have multiple Items via reference
 * Each Item represents a single object (or set of related objects--e.g. a full HTC Vive setup)
 
-(___TODO__: sample documents_)
-
 An Example User:
 
 ```javascript
@@ -34,6 +32,7 @@ An Example Request:
   name: "SIGGRAPH 2018", //optional, defaults to timestamp
   user: //reference to User who filed this Request
   external: true, //requesting to remove items from the lab
+  filed: //UNIX time of when this request was filed
   started: //UNIX time of beginning of term
   duedate: //UNIX time of end of term, or Infinity if indefinite & internal
   items: [] //list of references to items inclueded in Request
