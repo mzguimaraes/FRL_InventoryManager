@@ -112,7 +112,7 @@ An Example Item:
 * (2 points) Use a CSS framework
     * I plan to use Bootstrap.
 * (2 points) Use a server-side JavaScript module
-    * To manage admin email, I plan to use the Nodemail package
+    * To manage admin email, I plan to use the Nodemailer package
 * (2 points)  For external APIs
     * My team is on Slack, so I plan to include integrations for that service.
     * I don't anticipate this to be too hard to implement, but I may be surprised!  Will change point value accordingly if this turns out to be the case.
@@ -126,5 +126,5 @@ An Example Item:
 
 1. [passport.js authentication docs](http://passportjs.org/docs) - (add link to source code that was based on this)
 2. [Slack API documentation](https://api.slack.com/internal-integrations) - (add link to source code that was based on this)
-3. [Nodemail documentation](https://nodemailer.com/usage/)
+3. [Nodemailer documentation](https://nodemailer.com/usage/)
 4. More to come as development continues!

@@ -12,12 +12,12 @@ const Item = new Schema({
 //represents one request submitted
 const Request = new Schema({
 	name: {type: String, default: Date.now().toString},
-	user: {type: Schema.Types.objectId, ref: 'User'}, //ref to requester
+	user: {type: Schema.Types.ObjectId, ref: 'User'}, //ref to requester
 	external: Boolean, //is requesting to remove Items from lab
 	filed: {type: Date, default: Date.now}, 
 	started: Date, //beginning of term
 	duedate: Date, //end of term
-	items: [{type: Schema.Types.objectId, ref: 'Item'}], //all included Items
+	items: [{type: Schema.Types.ObjectId, ref: 'Item'}], //all included Items
 	approved: Boolean //admin approval
 });
 
@@ -27,7 +27,7 @@ const User = new Schema({
 	fullname: String,
 	email: String,
 	//all requests this user has submitted
-	requests: [{type: Schema.Types.objectId, ref: 'Request'}] 
+	requests: [{type: Schema.Types.ObjectId, ref: 'Request'}] 
 });
 
 mongoose.model("Item", Item);
